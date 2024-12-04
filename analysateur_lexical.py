@@ -1,6 +1,6 @@
 import ply.lex as lex
 
-reservés = {
+reserved = {
     'actor': 'ACTOR',
     'as': 'AS',
     'usecase': 'USECASE',
@@ -25,7 +25,7 @@ tokens = [
     'TEXTE_USE_CASE',
     'ID',
     'ALIAS'
-] + list(reservés.values())
+] + list(reserved.values())
 
 t_COLONNE = r':'
 t_FLÈCHE_DROITE_1 = r'-->'
@@ -72,7 +72,7 @@ def t_TEXTE_USE_CASE(t):
 
 def t_ID(t):
     r'[a-zA-Z_][a-zA-Z0-9_]*'
-    t.type = reservés.get(t.value, 'ID')
+    t.type = reserved.get(t.value, 'ID')
     return t
 
 def t_FIN_LIGNE(t):
