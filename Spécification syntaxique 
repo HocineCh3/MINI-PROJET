@@ -41,7 +41,7 @@ def t_ACTOR_TXT(t):
     return t
 
 def t_USE_CASE_TXT(t):
-    r"\([^ \n][^\n:]*\)"
+    r"\([^ :\n][^\n:]*\)"
     t.value = t.value[1:-1]
     return t
 
